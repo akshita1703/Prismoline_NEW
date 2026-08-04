@@ -103,6 +103,37 @@ $trust_highlights = [
                         <?php endforeach; ?>
                     </div>
 
+                    <!-- PRODUCT DESCRIPTION (SKU, description & applications for every
+                         product in this category, ahead of the visual card grid below) -->
+                    <?php if (!empty($cat['products'])): ?>
+                        <span class="pd-section-eyebrow d-block text-center">Product Details</span>
+                        <h2 class="section-title mb-4 text-center">Product <span class="fw-bold">Description</span></h2>
+
+                        <div class="category-product-desc-list">
+                            <?php foreach ($cat['products'] as $p):
+                                $sku = strtoupper(pathinfo($p['image'], PATHINFO_FILENAME));
+                                $detail = $product_details[$p['url_slug']] ?? null;
+                                $applications = $detail['applications'] ?? [];
+                            ?>
+                                <div class="category-product-desc-item">
+                                    <div class="category-product-desc-head">
+                                        <h3><?= htmlspecialchars($p['name']) ?></h3>
+                                        <span class="category-product-sku">SKU: <?= htmlspecialchars($sku) ?></span>
+                                    </div>
+                                    <p class="category-product-desc-text"><?= htmlspecialchars($p['description']) ?></p>
+                                    <?php if (!empty($applications)): ?>
+                                        <div class="category-product-desc-apps">
+                                            <span class="category-product-desc-apps-label">Applications:</span>
+                                            <?php foreach ($applications as $app): ?>
+                                                <span class="category-product-app-tag"><?= htmlspecialchars($app) ?></span>
+                                            <?php endforeach; ?>
+                                        </div>
+                                    <?php endif; ?>
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
+                    <?php endif; ?>
+
                     <!-- PRODUCT GRID -->
                     <?php if (!empty($cat['products'])): ?>
                         <span class="pd-section-eyebrow d-block text-center">Explore Our Collection</span>
