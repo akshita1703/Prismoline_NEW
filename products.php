@@ -111,24 +111,30 @@ $trust_highlights = [
 
                         <div class="category-product-desc-list">
                             <?php foreach ($cat['products'] as $p):
+                                $desc_image = !empty($p['image']) ? htmlspecialchars($p['image']) : 'no-product-image.webp';
                                 $sku = strtoupper(pathinfo($p['image'], PATHINFO_FILENAME));
                                 $detail = $product_details[$p['url_slug']] ?? null;
                                 $applications = $detail['applications'] ?? [];
                             ?>
                                 <div class="category-product-desc-item">
-                                    <div class="category-product-desc-head">
-                                        <h3><?= htmlspecialchars($p['name']) ?></h3>
-                                        <span class="category-product-sku">SKU: <?= htmlspecialchars($sku) ?></span>
+                                    <div class="category-product-desc-image">
+                                        <img src="<?= $base_url ?>assets/images/products/product/<?= $desc_image ?>" alt="<?= htmlspecialchars($p['name']) ?>">
                                     </div>
-                                    <p class="category-product-desc-text"><?= htmlspecialchars($p['description']) ?></p>
-                                    <?php if (!empty($applications)): ?>
-                                        <div class="category-product-desc-apps">
-                                            <span class="category-product-desc-apps-label">Applications:</span>
-                                            <?php foreach ($applications as $app): ?>
-                                                <span class="category-product-app-tag"><?= htmlspecialchars($app) ?></span>
-                                            <?php endforeach; ?>
+                                    <div class="category-product-desc-body">
+                                        <div class="category-product-desc-head">
+                                            <h3><?= htmlspecialchars($p['name']) ?></h3>
+                                            <span class="category-product-sku">SKU: <?= htmlspecialchars($sku) ?></span>
                                         </div>
-                                    <?php endif; ?>
+                                        <p class="category-product-desc-text"><?= htmlspecialchars($p['description']) ?></p>
+                                        <?php if (!empty($applications)): ?>
+                                            <div class="category-product-desc-apps">
+                                                <span class="category-product-desc-apps-label">Applications:</span>
+                                                <?php foreach ($applications as $app): ?>
+                                                    <span class="category-product-app-tag"><?= htmlspecialchars($app) ?></span>
+                                                <?php endforeach; ?>
+                                            </div>
+                                        <?php endif; ?>
+                                    </div>
                                 </div>
                             <?php endforeach; ?>
                         </div>
