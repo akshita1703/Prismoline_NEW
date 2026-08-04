@@ -66,6 +66,7 @@ $certifications = [
                     <p class="pd-hero-tagline"><?= htmlspecialchars($item['tagline']) ?></p>
                     <p class="pd-hero-desc"><?= htmlspecialchars($item['description']) ?></p>
 
+                    <?php if (!empty($item['spec_chips'])): ?>
                     <div class="pd-spec-chips">
                         <?php foreach ($item['spec_chips'] as $chip): ?>
                             <div class="pd-spec-chip">
@@ -74,6 +75,7 @@ $certifications = [
                             </div>
                         <?php endforeach; ?>
                     </div>
+                    <?php endif; ?>
 
                     <div class="pd-hero-actions">
                         <a href="<?= $base_url ?>contact.php#contact_form" class="btn-primary-custom">
@@ -87,10 +89,18 @@ $certifications = [
             </section>
         </div>
 
+        <!-- PRODUCT DESCRIPTION (standalone section, sourced from the product brochure) -->
+        <section class="pd-section">
+            <span class="pd-section-eyebrow">Overview</span>
+            <h2 class="pd-section-title">Product Description</h2>
+            <p class="pd-split-desc"><?= nl2br(htmlspecialchars($item['description'])) ?></p>
+        </section>
+
         <!-- KEY FEATURES (image + description split, like the product photo next to
              feature copy on the reference page) -->
+        <?php if (!empty($item['features'])): ?>
         <section class="pd-section">
-            <span class="pd-section-eyebrow">Why SNOW</span>
+            <span class="pd-section-eyebrow">Why <?= htmlspecialchars($item['name']) ?></span>
             <h2 class="pd-section-title">Key Features</h2>
 
             <div class="pd-split">
@@ -98,7 +108,6 @@ $certifications = [
                     <img src="<?= $base_url ?>assets/images/products/product/<?= htmlspecialchars($item['image']) ?>" alt="<?= htmlspecialchars($item['full_name']) ?>">
                 </div>
                 <div>
-                    <p class="pd-split-desc"><?= htmlspecialchars($item['description']) ?></p>
                     <div class="pd-feature-grid">
                         <?php foreach ($item['features'] as $feature): ?>
                             <div class="pd-feature-card">
@@ -110,11 +119,12 @@ $certifications = [
                 </div>
             </div>
         </section>
+        <?php endif; ?>
 
-        <!-- TECHNICAL SPECIFICATIONS -->
+        <!-- PRODUCT SPECIFICATION -->
         <section class="pd-section">
             <span class="pd-section-eyebrow">Data Sheet</span>
-            <h2 class="pd-section-title">Technical Specifications</h2>
+            <h2 class="pd-section-title">Product Specification</h2>
             <div class="row">
                 <div class="col-lg-8">
                     <table class="pd-spec-table">
@@ -132,6 +142,7 @@ $certifications = [
         </section>
 
         <!-- APPLICATIONS -->
+        <?php if (!empty($item['applications'])): ?>
         <section class="pd-section">
             <span class="pd-section-eyebrow">Where It's Used</span>
             <h2 class="pd-section-title">Applications</h2>
@@ -144,6 +155,7 @@ $certifications = [
                 <?php endforeach; ?>
             </div>
         </section>
+        <?php endif; ?>
 
         <!-- CERTIFICATIONS -->
         <section class="pd-section">
@@ -189,6 +201,7 @@ $certifications = [
         </section>
 
         <!-- FAQs -->
+        <?php if (!empty($item['faqs'])): ?>
         <section class="pd-section">
             <span class="pd-section-eyebrow">Common Questions</span>
             <h2 class="pd-section-title">Frequently Asked Questions</h2>
@@ -206,6 +219,7 @@ $certifications = [
                 <?php endforeach; ?>
             </div>
         </section>
+        <?php endif; ?>
 
         <!-- RELATED PRODUCTS -->
         <?php if (!empty($related)): ?>
