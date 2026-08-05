@@ -21,18 +21,11 @@ $page_meta_keywords = $item['seo_keywords'];
 require_once "inc/header.php";
 require_once "inc/nav.php";
 
-// Find the category's banner image to use as the hero background, and
-// sibling products in the same category for the "Related Products" rail.
-$related = [];
+// Find the category's banner image to use as the hero background.
 $cat_hero_image = '1.webp';
 foreach ($products as $cat) {
     if ($cat['cat_slug'] === $item['cat_slug']) {
         $cat_hero_image = $cat['cat_image'];
-        foreach ($cat['products'] as $p) {
-            if ($p['name'] !== $item['full_name']) {
-                $related[] = $p;
-            }
-        }
         break;
     }
 }
@@ -96,47 +89,20 @@ $certifications = [
             <p class="pd-split-desc"><?= nl2br(htmlspecialchars($item['description'])) ?></p>
         </section>
 
-        <!-- KEY FEATURES (image + description split, like the product photo next to
-             feature copy on the reference page) -->
-        <?php if (!empty($item['features'])): ?>
-        <section class="pd-section">
-            <span class="pd-section-eyebrow">Why <?= htmlspecialchars($item['name']) ?></span>
-            <h2 class="pd-section-title">Key Features</h2>
-
-            <div class="pd-split">
-                <div class="pd-split-image">
-                    <img src="<?= $base_url ?>assets/images/products/product/<?= htmlspecialchars($item['image']) ?>" alt="<?= htmlspecialchars($item['full_name']) ?>">
-                </div>
-                <div>
-                    <div class="pd-feature-grid">
-                        <?php foreach ($item['features'] as $feature): ?>
-                            <div class="pd-feature-card">
-                                <div class="pd-feature-icon"><i class="fa-solid fa-check"></i></div>
-                                <p class="pd-feature-text"><?= htmlspecialchars($feature) ?></p>
-                            </div>
-                        <?php endforeach; ?>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <?php endif; ?>
-
         <!-- PRODUCT SPECIFICATION -->
         <section class="pd-section">
             <span class="pd-section-eyebrow">Data Sheet</span>
             <h2 class="pd-section-title">Product Specification</h2>
             <div class="row">
                 <div class="col-lg-8">
-                    <table class="pd-spec-table">
-                        <tbody>
-                            <?php foreach ($item['specs'] as $label => $value): ?>
-                                <tr>
-                                    <th><?= htmlspecialchars($label) ?></th>
-                                    <td><?= htmlspecialchars($value) ?></td>
-                                </tr>
-                            <?php endforeach; ?>
-                        </tbody>
-                    </table>
+                    <div class="pd-simple-list">
+                        <?php foreach ($item['specs'] as $label => $value): ?>
+                            <div class="pd-simple-row">
+                                <span class="pd-simple-label"><?= htmlspecialchars($label) ?></span>
+                                <span class="pd-simple-value"><?= htmlspecialchars($value) ?></span>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
                 </div>
             </div>
         </section>
@@ -146,13 +112,31 @@ $certifications = [
         <section class="pd-section">
             <span class="pd-section-eyebrow">Where It's Used</span>
             <h2 class="pd-section-title">Applications</h2>
-            <div class="pd-application-grid">
-                <?php foreach ($item['applications'] as $app): ?>
-                    <div class="pd-application-item">
-                        <i class="fa-solid fa-road"></i>
-                        <span><?= htmlspecialchars($app) ?></span>
-                    </div>
-                <?php endforeach; ?>
+            <div class="row">
+                <div class="col-lg-8">
+                    <ul class="pd-simple-bullets">
+                        <?php foreach ($item['applications'] as $app): ?>
+                            <li><?= htmlspecialchars($app) ?></li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <?php endif; ?>
+
+        <!-- FEATURES -->
+        <?php if (!empty($item['features'])): ?>
+        <section class="pd-section">
+            <span class="pd-section-eyebrow">Why <?= htmlspecialchars($item['name']) ?></span>
+            <h2 class="pd-section-title">Features</h2>
+            <div class="row">
+                <div class="col-lg-8">
+                    <ul class="pd-simple-bullets">
+                        <?php foreach ($item['features'] as $feature): ?>
+                            <li><?= htmlspecialchars($feature) ?></li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
             </div>
         </section>
         <?php endif; ?>
@@ -219,34 +203,6 @@ $certifications = [
                 <?php endforeach; ?>
             </div>
         </section>
-        <?php endif; ?>
-
-        <!-- RELATED PRODUCTS -->
-        <?php if (!empty($related)): ?>
-            <section class="pd-section">
-                <span class="pd-section-eyebrow">Explore More</span>
-                <h2 class="pd-section-title">Related Products</h2>
-                <div class="row g-4">
-                    <?php foreach (array_slice($related, 0, 4) as $p):
-                        $related_desc = function_exists('mb_substr')
-                            ? mb_substr($p['description'], 0, 110)
-                            : substr($p['description'], 0, 110);
-                    ?>
-                        <div class="col-xl-3 col-lg-4 col-sm-6 d-flex">
-                            <div class="product-card-full shadow-sm w-100">
-                                <div class="product-card-full-image">
-                                    <img src="<?= $base_url ?>assets/images/products/product/<?= htmlspecialchars($p['image']) ?>" alt="<?= htmlspecialchars($p['name']) ?>">
-                                </div>
-                                <div class="product-card-full-body">
-                                    <span class="product-card-full-cat"><?= htmlspecialchars($item['cat_name']) ?></span>
-                                    <h3 class="product-card-full-title"><?= htmlspecialchars($p['name']) ?></h3>
-                                    <p class="product-card-full-desc"><?= htmlspecialchars($related_desc) ?>…</p>
-                                </div>
-                            </div>
-                        </div>
-                    <?php endforeach; ?>
-                </div>
-            </section>
         <?php endif; ?>
 
         <!-- CTA -->
