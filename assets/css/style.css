@@ -4728,6 +4728,19 @@ footer {
     }
 }
 
+/* Gentle staggered entrance for the hero on page load. */
+@keyframes pdFadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .pd-hero-image {
     position: relative;
     background: linear-gradient(160deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.04));
@@ -4741,6 +4754,54 @@ footer {
     justify-content: center;
     aspect-ratio: 1 / 1;
     overflow: hidden;
+
+    animation: pdFadeInUp 0.7s ease both;
+}
+
+.pd-category-badge,
+.pd-hero-title,
+.pd-hero-tagline,
+.pd-hero-desc,
+.pd-spec-chips,
+.pd-hero-actions {
+    animation: pdFadeInUp 0.7s ease both;
+}
+
+.pd-category-badge {
+    animation-delay: 0.05s;
+}
+
+.pd-hero-title {
+    animation-delay: 0.12s;
+}
+
+.pd-hero-tagline {
+    animation-delay: 0.19s;
+}
+
+.pd-hero-desc {
+    animation-delay: 0.26s;
+}
+
+.pd-spec-chips {
+    animation-delay: 0.33s;
+}
+
+.pd-hero-actions {
+    animation-delay: 0.4s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .pd-hero-image,
+    .pd-category-badge,
+    .pd-hero-title,
+    .pd-hero-tagline,
+    .pd-hero-desc,
+    .pd-spec-chips,
+    .pd-hero-actions {
+        animation: none;
+    }
 }
 
 .pd-hero-image img {
@@ -4822,17 +4883,19 @@ footer {
 
 .pd-hero-actions {
     display: flex;
-    gap: 14px;
+    gap: 16px;
     flex-wrap: wrap;
     margin-top: 6px;
-    padding-bottom: 4px;
+    padding: 6px 4px 8px;
 }
 
 .pd-hero-actions .btn-primary-custom,
 .pd-hero-actions .btn-outline-custom {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
+    padding: 14px 30px;
+    font-weight: 600;
     transform: none;
 }
 
@@ -4843,8 +4906,8 @@ footer {
 }
 
 .pd-hero-actions .btn-primary-custom:hover {
-    transform: none;
-    box-shadow: 0 8px 20px rgba(51, 104, 184, 0.35);
+    transform: scale(1.04);
+    box-shadow: 0 10px 24px rgba(51, 104, 184, 0.4);
 }
 
 .pd-hero-actions .btn-outline-custom {
@@ -4854,8 +4917,10 @@ footer {
 
 .pd-hero-actions .btn-outline-custom:hover {
     background: #fff;
+    border-color: #fff;
     color: var(--main-color-hover);
-    transform: none;
+    transform: scale(1.04);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
 }
 
 .pd-section {
