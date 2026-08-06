@@ -3,6 +3,7 @@ $current_page = 'products';
 
 require_once "inc/data.php";
 require_once "inc/product_details_data.php";
+require_once "inc/category_content_data.php";
 
 $cat_slug = isset($_GET['category']) ? trim($_GET['category']) : null;
 $selected_category = null;
@@ -80,6 +81,7 @@ $trust_highlights = [
                 <div class="tab-pane fade <?= $is_active ?>" id="<?= $tab_id ?>" role="tabpanel">
 
                     <!-- CATEGORY HERO -->
+                    <?php $cc = $category_content[$cat['cat_slug']] ?? null; ?>
                     <div class="category-hero shadow-sm">
                         <img src="<?= $base_url ?>assets/images/products/category/<?= $cat_image ?>"
                             alt="<?= htmlspecialchars($cat['cat_name']) ?>"
@@ -87,7 +89,29 @@ $trust_highlights = [
                         <div class="category-hero-body">
                             <span class="pd-section-eyebrow">Product Description</span>
                             <h2 class="section-title"><?= htmlspecialchars($cat['cat_name']) ?></h2>
-                            <?php if (!empty($cat['cat_blurb'])): ?>
+
+                            <?php if ($cc && !empty($cc['intro'])): ?>
+                                <div class="category-hero-desc category-hero-desc-rich">
+                                    <?php if (!empty($cc['tagline'])): ?>
+                                        <p class="category-content-tagline"><?= htmlspecialchars($cc['tagline']) ?></p>
+                                    <?php endif; ?>
+                                    <?php foreach ($cc['intro'] as $para): ?>
+                                        <p><?= $para /* static trusted content — may include <strong> */ ?></p>
+                                    <?php endforeach; ?>
+                                    <?php if (!empty($cc['features'])): ?>
+                                        <ul class="category-hero-bullets">
+                                            <?php foreach ($cc['features'] as $feature): ?>
+                                                <li><?= htmlspecialchars($feature) ?></li>
+                                            <?php endforeach; ?>
+                                        </ul>
+                                    <?php endif; ?>
+                                    <?php if (!empty($cc['outro'])): ?>
+                                        <?php foreach ($cc['outro'] as $para): ?>
+                                            <p><?= $para /* static trusted content — may include <strong> */ ?></p>
+                                        <?php endforeach; ?>
+                                    <?php endif; ?>
+                                </div>
+                            <?php elseif (!empty($cat['cat_blurb'])): ?>
                                 <p class="category-hero-desc"><?= htmlspecialchars($cat['cat_blurb']) ?></p>
                             <?php endif; ?>
                         </div>
@@ -142,6 +166,52 @@ $trust_highlights = [
                                 </div>
                             <?php endforeach; ?>
                         </div>
+                    <?php elseif ($cc): ?>
+                        <?php if (!empty($cc['sub_points']) || !empty($cc['specs']) || !empty($cc['lists'])):
+                            $listColClass = ['col-lg-12', 'col-lg-6', 'col-lg-4'][min(count($cc['lists'] ?? []), 3) - 1] ?? 'col-lg-4';
+                        ?>
+                            <div class="category-content">
+                                <?php if (!empty($cc['sub_points'])): ?>
+                                    <ul class="category-content-sublist">
+                                        <?php foreach ($cc['sub_points'] as $sp): ?>
+                                            <li><strong><?= htmlspecialchars($sp['label']) ?>:</strong> <?= htmlspecialchars($sp['text']) ?></li>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                <?php endif; ?>
+
+                                <?php if (!empty($cc['specs'])): ?>
+                                    <div class="row">
+                                        <div class="col-lg-8">
+                                            <div class="pd-simple-list">
+                                                <?php foreach ($cc['specs'] as $label => $value): ?>
+                                                    <div class="pd-simple-row">
+                                                        <span class="pd-simple-label"><?= htmlspecialchars($label) ?></span>
+                                                        <span class="pd-simple-value"><?= htmlspecialchars($value) ?></span>
+                                                    </div>
+                                                <?php endforeach; ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <?php endif; ?>
+
+                                <?php if (!empty($cc['lists'])): ?>
+                                    <div class="row g-4 mt-1">
+                                        <?php foreach ($cc['lists'] as $list): ?>
+                                            <div class="<?= $listColClass ?>">
+                                                <div class="category-content-card">
+                                                    <h3><?= htmlspecialchars($list['title']) ?></h3>
+                                                    <ul class="pd-simple-bullets">
+                                                        <?php foreach ($list['items'] as $item): ?>
+                                                            <li><?= htmlspecialchars($item) ?></li>
+                                                        <?php endforeach; ?>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        <?php endforeach; ?>
+                                    </div>
+                                <?php endif; ?>
+                            </div>
+                        <?php endif; ?>
                     <?php else: ?>
                         <p class="text-center text-muted my-5">Product listings for this category are coming soon. Please contact us for full specifications.</p>
                     <?php endif; ?>

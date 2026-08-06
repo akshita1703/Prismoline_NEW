@@ -236,49 +236,52 @@ require_once "inc/nav.php";
 
         <section class="bg-light my-md-5 rounded-5 shadow-sm py-md-5 p-lg-5 p-ms-4 p-3">
             <h2 class="section-title">What <span class="fw-bold">Our Clients Say</span></h2>
-            <div class="row g-4 mt-2">
-                <div class="col-md-6">
-                    <div class="testimonial-card">
-                        <div class="testimonial-card-inner">
-                            <div class="testimonial-card-img">
-                                <img src="<?= $base_url ?>assets/images/clients/testimonial_akg.jpeg" alt="Client Image" class="img-fluid testimonial-img" />
-                            </div>
-                            <div class="testimonial-card-content">
-                                <h2>Customer-Focused</h2>
-                                <p>We appreciate the excellent execution and attention to detail shown by the team at Sharda Infrasolutions. Their proactive approach and clear communication ensured our project was completed on schedule without compromise.</p>
-                                <p class="fw-semibold mb-0">Abhishek Kumar Gupta</p>
-                                <p class="small text-muted">Planning In-charge, GSRP O&M, L&T</p>
+            <div class="testimonial-card-div">
+                <div class="testimonial-card-v2">
+                    <div class="tcard-top-row">
+                        <div class="tcard-ribbon">
+                            <span class="tcard-name">Abhishek Kumar Gupta</span>
+                            <span class="tcard-label">Client Review</span>
+                            <div class="tcard-stars">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
                             </div>
                         </div>
-                        <div class="testimonial-stars">
-                            <i class="fa-solid fa-star testimonial-star"></i>
-                            <i class="fa-solid fa-star testimonial-star"></i>
-                            <i class="fa-solid fa-star testimonial-star"></i>
-                            <i class="fa-solid fa-star testimonial-star"></i>
-                            <i class="fa-solid fa-star testimonial-star"></i>
+                        <div class="tcard-photo">
+                            <img src="<?= $base_url ?>assets/images/clients/testimonial_akg.jpeg" alt="Abhishek Kumar Gupta">
                         </div>
                     </div>
+                    <div class="tcard-body">
+                        <h3 class="tcard-role-title">Customer-Focused</h3>
+                        <p class="tcard-role-sub">Planning In-charge, GSRP O&M, L&T</p>
+                        <p class="tcard-quote">We appreciate the excellent execution and attention to detail shown by the team at Sharda Infrasolutions. Their proactive approach and clear communication ensured our project was completed on schedule without compromise.</p>
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="testimonial-card">
-                        <div class="testimonial-card-inner">
-                            <div class="testimonial-card-img">
-                                <img src="<?= $base_url ?>assets/images/clients/testimonial_vt.jpeg" alt="Client Image" class="img-fluid testimonial-img" />
-                            </div>
-                            <div class="testimonial-card-content">
-                                <h2>Exceptional Durability & Reliability</h2>
-                                <p>The quality of thermoplastic road marking paints supplied by Sharda Infrasolutions has been consistently reliable. Their technical guidance and prompt after-sales support have helped us maintain high standards at every site.</p>
-                                <p class="fw-semibold mb-0">Vineet Tiwari</p>
-                                <p class="small text-muted">Sr. Manager Procurement & Subcontract, Welspun Enterprise Ltd, Varanasi Aurangabad Road Project NH19</p>
+
+                <div class="testimonial-card-v2">
+                    <div class="tcard-top-row">
+                        <div class="tcard-ribbon">
+                            <span class="tcard-name">Vineet Tiwari</span>
+                            <span class="tcard-label">Client Review</span>
+                            <div class="tcard-stars">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
                             </div>
                         </div>
-                        <div class="testimonial-stars">
-                            <i class="fa-solid fa-star testimonial-star"></i>
-                            <i class="fa-solid fa-star testimonial-star"></i>
-                            <i class="fa-solid fa-star testimonial-star"></i>
-                            <i class="fa-solid fa-star testimonial-star"></i>
-                            <i class="fa-solid fa-star testimonial-star"></i>
+                        <div class="tcard-photo">
+                            <img src="<?= $base_url ?>assets/images/clients/testimonial_vt.jpeg" alt="Vineet Tiwari">
                         </div>
+                    </div>
+                    <div class="tcard-body">
+                        <h3 class="tcard-role-title">Exceptional Durability & Reliability</h3>
+                        <p class="tcard-role-sub">Sr. Manager Procurement & Subcontract, Welspun Enterprise Ltd, Varanasi Aurangabad Road Project NH19</p>
+                        <p class="tcard-quote">The quality of thermoplastic road marking paints supplied by Sharda Infrasolutions has been consistently reliable. Their technical guidance and prompt after-sales support have helped us maintain high standards at every site.</p>
                     </div>
                 </div>
             </div>

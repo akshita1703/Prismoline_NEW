@@ -117,6 +117,25 @@ $product_details = [
             'Municipal Corporation Roads',
         ],
 
+        'faqs' => [
+            [
+                'q' => 'What application methods are compatible with PRO thermoplastic paint?',
+                'a' => 'PRO is compatible with screed box, extrusion, and spray application methods, giving contractors flexibility across different road marking project scales.',
+            ],
+            [
+                'q' => 'Is PRO thermoplastic paint suitable for state highway tenders?',
+                'a' => 'Yes, PRO meets standard thermoplastic road marking specifications required by state PWDs and is formulated for government infrastructure contracts.',
+            ],
+            [
+                'q' => 'What pavement surfaces can PRO be applied on?',
+                'a' => 'PRO adheres effectively to bituminous (asphalt) and Portland cement concrete (PCC) surfaces, with primer recommended for concrete applications.',
+            ],
+            [
+                'q' => 'What is the shelf life of PRO thermoplastic road marking compound?',
+                'a' => 'PRO has a shelf life of 12 months from the date of manufacture when stored in cool, dry conditions away from direct sunlight.',
+            ],
+        ],
+
         'seo_title' => 'PRO Thermoplastic Road Marking Paint | Prismoline',
         'seo_desc'  => 'PRO is a standard-grade, cost-effective thermoplastic road marking paint built for consistent line quality on highway and urban roads.',
         'seo_keywords' => 'Thermoplastic Road Marking Paint, Standard Grade Road Marking Paint, Hot Melt Road Paint, MoRTH 803.4 Road Marking',
@@ -161,6 +180,25 @@ $product_details = [
             'National Highway Projects (NHAI / NHIDCL)',
             'High-Traffic Corridors',
             'Lane & Chevron Marking',
+        ],
+
+        'faqs' => [
+            [
+                'q' => 'How does PRO-MAXX differ from standard PRO thermoplastic paint?',
+                'a' => 'PRO-MAXX uses an upgraded resin-binder system that offers significantly higher abrasion resistance and extended retroreflectivity retention compared to standard PRO grade, making it suited for very high-traffic roads.',
+            ],
+            [
+                'q' => 'Is PRO-MAXX approved for NHAI expressway projects?',
+                'a' => 'PRO-MAXX is formulated to meet NHAI and MoRTH 803 specifications for high-volume road marking and is suitable for submission under NHAI, NHIDCL, and NHDP project tenders.',
+            ],
+            [
+                'q' => 'What is the expected service life of PRO-MAXX road markings?',
+                'a' => 'Under standard high-traffic conditions, PRO-MAXX road markings deliver an extended service life of 2–3 years depending on traffic volume, pavement type, and environmental conditions.',
+            ],
+            [
+                'q' => 'Can PRO-MAXX be used in heavy vehicle zones?',
+                'a' => 'Yes, PRO-MAXX is specifically engineered for zones with heavy axle loads including truck lanes, freight corridors, and logistics park roads.',
+            ],
         ],
 
         'seo_title' => 'PRO-MAXX High-Performance Thermoplastic Road Marking Paint | Prismoline',
@@ -209,6 +247,25 @@ $product_details = [
             'Lane & Bar Marking',
         ],
 
+        'faqs' => [
+            [
+                'q' => 'What is BS 3262 and why is it important for road marking?',
+                'a' => 'BS 3262 is the British Standard for hot-applied thermoplastic road marking materials. It specifies requirements for composition, performance, and safety, making it a globally recognised quality benchmark.',
+            ],
+            [
+                'q' => 'Is PREMIUM BS:3262 thermoplastic paint suitable for Middle East projects?',
+                'a' => 'Yes, BS 3262-compliant thermoplastic compounds are frequently specified in GCC and Middle East road infrastructure contracts, and PREMIUM BS:3262 meets these international procurement requirements.',
+            ],
+            [
+                'q' => 'What colours are available in PREMIUM BS:3262?',
+                'a' => 'PREMIUM BS:3262 is available in white and yellow, the two standard road marking colours, compliant with BS 3262 colour and luminance specifications.',
+            ],
+            [
+                'q' => 'Does PREMIUM BS:3262 include premixed glass beads?',
+                'a' => 'Yes, PREMIUM BS:3262 includes premixed glass beads at the ratio specified under BS 3262 to ensure minimum initial retroreflectivity upon application.',
+            ],
+        ],
+
         'seo_title' => 'PREMIUM BS 3262 Thermoplastic Road Marking Paint | Prismoline',
         'seo_desc'  => 'PREMIUM BS 3262 is a certified thermoplastic road marking compound built for export and international infrastructure projects.',
         'seo_keywords' => 'BS 3262 Thermoplastic Paint, Export Road Marking Paint, International Road Marking Compound',
@@ -255,6 +312,25 @@ $product_details = [
             'Smart City Infrastructure',
         ],
 
+        'faqs' => [
+            [
+                'q' => 'What is MoRTH Section 803.4 and what does it specify?',
+                'a' => 'MoRTH Section 803.4 defines the technical specifications for hot-applied thermoplastic road marking compounds in India, covering composition, application parameters, retroreflectivity, and durability requirements.',
+            ],
+            [
+                'q' => 'Is PREMIUM MoRTH 803.4 suitable for PMGSY and smart city projects?',
+                'a' => 'Yes, PREMIUM MoRTH 803.4 meets the government specifications applicable to PMGSY rural roads, smart city mobility projects, and state PWD highway marking contracts.',
+            ],
+            [
+                'q' => 'What testing is done on PREMIUM MoRTH 803.4 before dispatch?',
+                'a' => 'Each batch undergoes binder content, softening point, flow rate, glass bead content, and retroreflectivity testing in conformance with MoRTH 803.4 and relevant IS/BIS standards.',
+            ],
+            [
+                'q' => 'What is the coverage rate of PREMIUM MoRTH 803.4?',
+                'a' => 'Coverage depends on line width and thickness specified. At 3mm thickness, approximately 2.5–3 kg/m² is consumed, consistent with MoRTH application norms.',
+            ],
+        ],
+
         'seo_title' => 'PREMIUM+ MoRTH 803.4 Thermoplastic Road Marking Paint | Prismoline',
         'seo_desc'  => 'PREMIUM+ is a MoRTH 803.4 compliant thermoplastic road marking paint built for government highway tenders and audits.',
         'seo_keywords' => 'MoRTH 803.4 Thermoplastic Paint, Government Tender Road Marking Paint, NHAI Approved Road Paint',
@@ -299,6 +375,25 @@ $product_details = [
             'Pedestrian Crossings',
             'Highway Edge Lines',
             'Rumble Strip Alternative',
+        ],
+
+        'faqs' => [
+            [
+                'q' => 'What is ribbed thermoplastic road marking and how does it work?',
+                'a' => 'Ribbed thermoplastic marking is applied with a specialised screed that creates raised parallel ribs on the road surface. When a vehicle tyre crosses the marking, the ribs generate vibration and sound, alerting the driver — functioning as an integrated rumble strip within the lane line.',
+            ],
+            [
+                'q' => 'Where is PRISMORIB ribbed thermoplastic marking most commonly used?',
+                'a' => 'PRISMORIB is widely used on highway edge lines, centre lines, pedestrian crossings, school zone markings, and approach lanes to toll plazas and intersections where tactile driver alerting is required.',
+            ],
+            [
+                'q' => 'Is PRISMORIB compatible with standard thermoplastic marking machines?',
+                'a' => 'PRISMORIB requires a ribbed screed attachment or specialised applicator. It is compatible with standard thermoplastic melting and dispensing units.',
+            ],
+            [
+                'q' => 'Does PRISMORIB comply with MoRTH or IRC guidelines?',
+                'a' => 'PRISMORIB is designed to align with IRC:35 road marking guidelines and MoRTH specifications for raised pavement markings and tactile road delineation.',
+            ],
         ],
 
         'seo_title' => 'PRISMORIB Ribbed Thermoplastic Road Marking Paint | Prismoline',
@@ -348,6 +443,25 @@ $product_details = [
             'Drop-On Application on Hot Thermoplastic & Cold Plastic',
         ],
 
+        'faqs' => [
+            [
+                'q' => 'What does BS 6088 Class B mean for glass beads?',
+                'a' => 'BS 6088 Class B specifies the gradation, roundness, refractive index, and retroreflective performance requirements for drop-on glass beads used in road marking. Class B beads provide standard initial retroreflectivity.',
+            ],
+            [
+                'q' => 'What is the difference between drop-on and premixed glass beads?',
+                'a' => 'Drop-on glass beads are applied onto the surface of freshly applied road marking to maximise initial retroreflectivity. Premixed beads are incorporated into the thermoplastic compound and become exposed as the surface wears, providing long-term retroreflectivity.',
+            ],
+            [
+                'q' => 'What application rate is recommended for PRISMOLITE PRO glass beads?',
+                'a' => 'PRISMOLITE PRO is typically applied at 300–500 g/m² drop-on over fresh thermoplastic marking, depending on required retroreflectivity levels and project specifications.',
+            ],
+            [
+                'q' => 'Are PRISMOLITE PRO glass beads compatible with all road marking paints?',
+                'a' => 'Yes, PRISMOLITE PRO beads are compatible with thermoplastic, cold plastic, and epoxy road marking materials. They adhere effectively when applied to fresh marking surfaces.',
+            ],
+        ],
+
         'seo_title' => 'PRISMOLITE PRO Drop-On Glass Beads BS 6088 | Prismoline',
         'seo_desc'  => 'PRISMOLITE PRO drop-on glass beads deliver reliable night-time retroreflectivity, conforming to BS 6088 Type II specifications.',
         'seo_keywords' => 'Drop On Glass Beads, BS 6088 Glass Beads, Reflective Road Marking Beads',
@@ -393,6 +507,25 @@ $product_details = [
             'Safety-Critical Road Sections',
             'High-Speed Traffic Corridors',
             'Drop-On Application on Hot Thermoplastic & Cold Plastic',
+        ],
+
+        'faqs' => [
+            [
+                'q' => 'How does PRISMOLITE PRO-MAXX differ from standard PRO glass beads?',
+                'a' => 'PRO-MAXX uses a higher refractive index and finer gradation control to deliver significantly greater retroreflectivity compared to standard Class B beads, making it ideal for high-speed expressways and safety-critical road sections.',
+            ],
+            [
+                'q' => 'What retroreflectivity levels can be achieved with PRO-MAXX?',
+                'a' => 'PRO-MAXX glass beads can achieve initial retroreflectivity values of ≥350 mcd/lx/m² when applied correctly on fresh thermoplastic markings, exceeding standard BS 6088 Class B minimums.',
+            ],
+            [
+                'q' => 'Is PRO-MAXX suitable for use on expressways and ring roads?',
+                'a' => 'Yes, PRO-MAXX is specifically recommended for high-speed expressways, ring roads, and national highways where enhanced night-time visibility is required for road safety compliance.',
+            ],
+            [
+                'q' => 'What is the recommended drop-on rate for PRO-MAXX glass beads?',
+                'a' => 'The recommended drop-on application rate for PRO-MAXX is 400–600 g/m² depending on thermoplastic thickness and required retroreflectivity performance.',
+            ],
         ],
 
         'seo_title' => 'PRISMOLITE PRO-MAXX High-Performance Glass Beads | Prismoline',
@@ -442,6 +575,25 @@ $product_details = [
             'Drop-On Application on Hot Thermoplastic & Cold Plastic',
         ],
 
+        'faqs' => [
+            [
+                'q' => 'What applications are best suited for PRISMOLITE STAR glass beads?',
+                'a' => 'PRISMOLITE STAR is best suited for premium highway projects, smart city road infrastructure, NHAI expressways, and any project where the highest retroreflective performance from glass beads is contractually required.',
+            ],
+            [
+                'q' => 'How does bead roundness affect retroreflectivity?',
+                'a' => 'Higher bead roundness ensures uniform refraction and reflection of vehicle headlight beams back toward the driver. PRISMOLITE STAR\'s ≥90% roundness grade delivers maximum and consistent retroreflective response.',
+            ],
+            [
+                'q' => 'Is PRISMOLITE STAR suitable for yellow thermoplastic road markings?',
+                'a' => 'Yes, PRISMOLITE STAR performs effectively with both white and yellow thermoplastic compounds. Its optical characteristics are optimised across the visible spectrum.',
+            ],
+            [
+                'q' => 'Can PRISMOLITE STAR be used in cold plastic marking systems?',
+                'a' => 'Yes, PRISMOLITE STAR is compatible with cold plastic, epoxy resin, and thermoplastic road marking systems when applied as a drop-on surface bead.',
+            ],
+        ],
+
         'seo_title' => 'PRISMOLITE STAR Premium Glass Beads | Prismoline',
         'seo_desc'  => 'PRISMOLITE STAR is a top-tier glass bead product with 93.9% roundness for maximum retroreflective output on expressways.',
         'seo_keywords' => 'Premium Glass Beads, High Roundness Glass Beads, Smart Highway Road Marking Beads',
@@ -485,6 +637,25 @@ $product_details = [
             'Medians & Traffic Islands',
         ],
 
+        'faqs' => [
+            [
+                'q' => 'What surfaces can PRISMOLITE Kerb Marking Paint be applied to?',
+                'a' => 'PRISMOLITE Kerb Marking Paint is formulated for application on concrete kerbs, natural stone kerbs, cement masonry, and precast kerb blocks used in road and highway infrastructure.',
+            ],
+            [
+                'q' => 'Is kerb marking paint required under MoRTH or IRC specifications?',
+                'a' => 'Yes, IRC:35 and MoRTH guidelines specify kerb delineation using contrasting white or black paint to improve road edge visibility for drivers, particularly on urban roads and highway underpasses.',
+            ],
+            [
+                'q' => 'How many coats of kerb marking paint are typically required?',
+                'a' => 'Two coats of PRISMOLITE Kerb Marking Paint are recommended for optimal coverage and durability. The first coat acts as a primer-base, and the second provides the final delineation finish.',
+            ],
+            [
+                'q' => 'What is the drying time for PRISMOLITE Kerb Marking Paint?',
+                'a' => 'PRISMOLITE Kerb Marking Paint dries to touch within 30 minutes and is ready for second coat in 2–4 hours under standard conditions (25°C, 50% RH).',
+            ],
+        ],
+
         'seo_title' => 'Kerb Marking Paint | Prismolite Road Safety | Prismoline',
         'seo_desc'  => 'PRISMOLITE Kerb Marking Paint delivers durable, high-opacity delineation for kerbs, medians and traffic islands on urban roads.',
         'seo_keywords' => 'Kerb Marking Paint, Road Kerb Paint, Traffic Island Paint, Median Marking Paint',
@@ -526,6 +697,25 @@ $product_details = [
             'Bridge Decks',
             'Thermoplastic Road Marking Preparation',
             'Cold Plastic Marking Preparation',
+        ],
+
+        'faqs' => [
+            [
+                'q' => 'When is road marking primer necessary?',
+                'a' => 'Primer is essential when applying thermoplastic road marking on cement concrete (PCC), old or contaminated bituminous surfaces, or any substrate with low absorption. It significantly improves bond strength and marking service life.',
+            ],
+            [
+                'q' => 'Is PRISMOLITE Primer compatible with all thermoplastic road marking compounds?',
+                'a' => 'Yes, PRISMOLITE Primer is compatible with all standard thermoplastic and cold plastic road marking compounds, including MoRTH 803.4 and BS 3262 specified products.',
+            ],
+            [
+                'q' => 'What is the application method for road marking primer?',
+                'a' => 'PRISMOLITE Primer is applied by brush, roller, or spray to a clean, dry substrate. It should be allowed to dry (typically 5–15 minutes) before thermoplastic marking is applied over it.',
+            ],
+            [
+                'q' => 'Is primer application mandated by MoRTH on concrete roads?',
+                'a' => 'Yes, MoRTH specifications recommend primer application on PCC and cement concrete surfaces to ensure adequate adhesion of thermoplastic road marking compounds.',
+            ],
         ],
 
         'seo_title' => 'Thermoplastic Adhesion Road Marking Primer | Prismoline',
@@ -575,6 +765,25 @@ $product_details = [
             'Road Stud Installation Adhesive',
         ],
 
+        'faqs' => [
+            [
+                'q' => 'What are the advantages of epoxy road marking over thermoplastic?',
+                'a' => 'Epoxy road marking offers superior abrasion resistance, chemical resistance to fuel and oils, and a significantly longer service life. It is preferred for tunnels, industrial zones, and high-stress pavement areas where thermoplastic marking would wear prematurely.',
+            ],
+            [
+                'q' => 'Can PRISMOLITE Epoxy be used for road stud installation?',
+                'a' => 'Yes, PRISMOLITE Epoxy\'s high-bond adhesive properties make it an ideal bonding agent for aluminium road studs, ceramic delineators, and solar stud base installation on road surfaces.',
+            ],
+            [
+                'q' => 'What is the cure time for PRISMOLITE Epoxy road marking?',
+                'a' => 'PRISMOLITE Epoxy achieves initial cure in 2–4 hours and full cure in 24–48 hours at 25°C. Cure time may vary with ambient temperature.',
+            ],
+            [
+                'q' => 'Is PRISMOLITE Epoxy suitable for parking garages and tunnels?',
+                'a' => 'Yes, PRISMOLITE Epoxy\'s solvent-free, low-VOC formulation makes it suitable for enclosed spaces such as parking garages, road tunnels, and underpasses where fume accumulation is a concern.',
+            ],
+        ],
+
         'seo_title' => 'Epoxy Road Marking Paint – Prismolite Epoxy | Prismoline',
         'seo_desc'  => 'PRISMOLITE Epoxy is a solvent-free 2K road marking system built for tunnels, depots and high-stress pavement zones.',
         'seo_keywords' => 'Epoxy Road Marking Paint, Solvent Free Epoxy, Heavy Duty Pavement Marking, Road Stud Adhesive Epoxy',
@@ -620,6 +829,25 @@ $product_details = [
             'IRC / MoRTH Road Stud Tenders',
         ],
 
+        'faqs' => [
+            [
+                'q' => 'What is the purpose of the shank in road studs?',
+                'a' => 'The shank provides mechanical anchoring of the road stud into a pre-drilled hole in the pavement, ensuring secure installation and resistance to dislodgement by vehicle tyres, particularly on high-speed roads.',
+            ],
+            [
+                'q' => 'What material are PRISMOLITE Studs with Shank made from?',
+                'a' => 'PRISMOLITE Studs with Shank are manufactured from high-grade die-cast aluminium, offering a combination of lightweight, high compressive strength, and corrosion resistance.',
+            ],
+            [
+                'q' => 'Are PRISMOLITE Studs with Shank suitable for expressway installation?',
+                'a' => 'Yes, PRISMOLITE Studs with Shank are designed to withstand the vehicle load and wheel impact on expressways and national highways, compliant with IRC and MoRTH road stud specifications.',
+            ],
+            [
+                'q' => 'What retroreflective colours are available?',
+                'a' => 'PRISMOLITE Studs with Shank are available with white, amber, red, and green retroreflective lenses to suit different road marking applications per IRC:35 delineation requirements.',
+            ],
+        ],
+
         'seo_title' => 'Aluminium Road Studs with Shank | Prismolite | Prismoline',
         'seo_desc'  => 'PRISMOLITE Road Studs with Shank offer twin-shank anchorage and 4X reflectivity for national highway lane delineation.',
         'seo_keywords' => 'Aluminium Road Studs, Road Studs with Shank, Retroreflective Road Studs, MoRTH Road Studs',
@@ -661,6 +889,25 @@ $product_details = [
             'Wide-Angle Lane Delineation',
             'Road Safety Delineation Projects',
             'High-Durability Pavement Marking',
+        ],
+
+        'faqs' => [
+            [
+                'q' => 'What does ILC mean in PRISMOLITE ILC road studs?',
+                'a' => 'ILC stands for Improved Lens Ceramic — a ceramic-enhanced retroreflective lens system that provides superior abrasion resistance and sustained retroreflective performance compared to standard plastic or glass lens studs.',
+            ],
+            [
+                'q' => 'How do ILC road studs compare to standard road studs?',
+                'a' => 'ILC road studs offer enhanced retroreflective lens durability due to the ceramic material, resulting in a longer functional service life, particularly on roads with heavy traffic and frequent tyre contact.',
+            ],
+            [
+                'q' => 'Are PRISMOLITE ILC studs suitable for wet weather road safety?',
+                'a' => 'Yes, the ILC lens design maintains effective retroreflective performance in wet conditions, making these studs effective for wet-night road delineation where standard studs may lose performance.',
+            ],
+            [
+                'q' => 'What installation method is used for PRISMOLITE ILC studs?',
+                'a' => 'PRISMOLITE ILC studs are installed using epoxy adhesive bonding to the pavement surface, with optional shank installation available depending on the model variant.',
+            ],
         ],
 
         'seo_title' => 'ILC Ceramic Lens Road Studs | Prismolite | Prismoline',
@@ -706,6 +953,29 @@ $product_details = [
             'Foggy / Mountain Roads',
             'Accident-Prone Zones',
             'NHAI / NHIDCL Expressways',
+        ],
+
+        'faqs' => [
+            [
+                'q' => 'How do solar road studs differ from regular retroreflective road studs?',
+                'a' => 'Solar road studs are active devices that emit their own LED light, making them visible up to 800m compared to 150–200m for passive retroreflective studs. This dramatically improves driver alerting time in fog, rain, and darkness.',
+            ],
+            [
+                'q' => 'What is the battery life of PRISMOLITE Solar Studs?',
+                'a' => 'PRISMOLITE Solar Studs use high-efficiency lithium batteries charged via solar panel. A fully charged battery provides 72–96 hours of continuous LED operation, suitable for extended cloudy conditions.',
+            ],
+            [
+                'q' => 'Are PRISMOLITE Solar Studs suitable for foggy highway sections?',
+                'a' => 'Yes, solar road studs are highly effective in fog-prone sections as their active LED output penetrates fog far better than passive retroreflective devices, significantly improving road safety.',
+            ],
+            [
+                'q' => 'What compressive load can PRISMOLITE Solar Studs withstand?',
+                'a' => 'PRISMOLITE Solar Studs are engineered to withstand compressive loads of ≥20 tonnes, suitable for heavy vehicle traffic on national highways and expressways.',
+            ],
+            [
+                'q' => 'Do PRISMOLITE Solar Studs require maintenance?',
+                'a' => 'Minimal maintenance is required. The sealed unit is weatherproof (IP68 rated), and the solar panel and LED system are designed for 5+ years of operational life under normal road conditions.',
+            ],
         ],
 
         'seo_title' => 'Prismolite Solar Road Studs | Prismoline',
@@ -754,6 +1024,25 @@ $product_details = [
             'Traffic Management Projects',
         ],
 
+        'faqs' => [
+            [
+                'q' => 'What is AquaTrak WB Water Based Acrylic Road Marking Paint used for?',
+                'a' => 'AquaTrak WB is designed for road markings on highways, municipal roads, parking lots, airports, industrial premises, and urban infrastructure where fast drying and environmental compliance are important.',
+            ],
+            [
+                'q' => 'Does AquaTrak WB comply with Indian Standards?',
+                'a' => 'Yes. AquaTrak WB is manufactured in accordance with IS 164 specifications for water-based road marking paints.',
+            ],
+            [
+                'q' => 'Can AquaTrak WB be applied on both asphalt and concrete?',
+                'a' => 'Yes. It provides excellent adhesion on properly prepared asphalt and concrete pavements.',
+            ],
+            [
+                'q' => 'What is the drying time of AquaTrak WB?',
+                'a' => 'Under normal conditions at 25°C, AquaTrak WB becomes touch dry within approximately 10–15 minutes, reducing traffic disruption.',
+            ],
+        ],
+
         'seo_title' => 'AquaTrak WB Water Based Acrylic Road Marking Paint | Prismoline',
         'seo_desc'  => 'AquaTrak WB is a fast-drying, IS 164 compliant water-based acrylic road marking paint for highways, kerbs and airfields.',
         'seo_keywords' => 'Water Based Road Marking Paint, Acrylic Road Paint, IS 164 Road Marking Paint, AquaTrak WB',
@@ -797,6 +1086,25 @@ $product_details = [
             'Airports & Parking Facilities',
             'Industrial Premises',
             'Concrete & Aged Asphalt Surfaces',
+        ],
+
+        'faqs' => [
+            [
+                'q' => 'What is ProGrip Concrete Primer used for?',
+                'a' => 'ProGrip is a high-bond road marking primer designed to improve the adhesion of thermoplastic and MMA cold plastic road marking materials on concrete, aged asphalt, and other difficult pavement surfaces.',
+            ],
+            [
+                'q' => 'Which surfaces are suitable for ProGrip?',
+                'a' => 'ProGrip is recommended for concrete roads, aged asphalt pavements, airport runways, parking facilities, industrial floors, and other porous pavement surfaces requiring enhanced adhesion.',
+            ],
+            [
+                'q' => 'How long does ProGrip take to dry?',
+                'a' => 'Under normal conditions at 25°C, ProGrip becomes touch dry within approximately 15–20 minutes and hard dries within 30–45 minutes.',
+            ],
+            [
+                'q' => 'How is ProGrip applied?',
+                'a' => 'ProGrip can be applied using spray equipment, rollers, or brushes after proper surface cleaning and preparation to achieve maximum bonding performance.',
+            ],
         ],
 
         'seo_title' => 'ProGrip Concrete Primer | Prismoline',
@@ -848,6 +1156,25 @@ $product_details = [
             'Parking Areas & Urban Infrastructure',
         ],
 
+        'faqs' => [
+            [
+                'q' => 'What is ProGuard Cold Plastic Road Marking Paint?',
+                'a' => 'ProGuard is a high-performance 2K MMA-based cold plastic pavement marking system designed for permanent road markings with excellent durability and skid resistance.',
+            ],
+            [
+                'q' => 'Where can ProGuard be used?',
+                'a' => 'It is suitable for highways, expressways, airports, pedestrian crossings, cycle tracks, toll plazas, industrial parks, and smart city infrastructure.',
+            ],
+            [
+                'q' => 'How long does ProGuard take to cure?',
+                'a' => 'Under standard conditions, ProGuard hardens in approximately 20 minutes at 30°C after catalyst mixing.',
+            ],
+            [
+                'q' => 'What makes MMA cold plastic superior to conventional road paint?',
+                'a' => 'MMA technology offers significantly higher abrasion resistance, longer service life, superior adhesion, excellent skid resistance, and reduced maintenance compared to conventional traffic paints.',
+            ],
+        ],
+
         'seo_title' => 'ProGuard Cold Plastic Road Marking Paint | Prismoline',
         'seo_desc'  => 'ProGuard is a 2K MMA-based cold plastic road marking system built for permanent, high-durability pavement markings.',
         'seo_keywords' => 'Cold Plastic Road Marking Paint, MMA Road Marking Paint, ProGuard 2K, Permanent Road Marking',
@@ -892,6 +1219,25 @@ $product_details = [
             'Industrial & Warehouse Premises',
         ],
 
+        'faqs' => [
+            [
+                'q' => 'What diameter convex mirrors are available for road safety use?',
+                'a' => 'Road safety convex mirrors are available in standard diameters of 300mm, 450mm, 600mm, 800mm, and 1000mm. Larger diameters provide wider fields of view for high-speed approach zones.',
+            ],
+            [
+                'q' => 'What material is the reflective surface made from?',
+                'a' => 'The reflective surface is manufactured from high-impact acrylic mirror or stainless steel mirror sheet, both offering excellent outdoor durability, UV resistance, and distortion-free wide-angle reflection.',
+            ],
+            [
+                'q' => 'Where are convex safety mirrors most commonly installed?',
+                'a' => 'Convex mirrors are commonly installed at road blind corners, parking area exits, factory gates, warehouse driveways, shopping complex approaches, and pedestrian crossing blind spots.',
+            ],
+            [
+                'q' => 'Are your convex mirrors suitable for outdoor highway installation?',
+                'a' => 'Yes, our convex mirrors feature UV-stabilised ABS or stainless steel housings rated for outdoor exposure, wind load, and temperature cycling typical of Indian highway and industrial environments.',
+            ],
+        ],
+
         'seo_title' => 'Road Safety Convex Mirror | Prismoline',
         'seo_desc'  => 'Wide-angle polycarbonate convex mirrors for blind corners, T-junctions and parking exits, built for outdoor durability.',
         'seo_keywords' => 'Convex Mirror, Traffic Safety Mirror, Road Safety Mirror, Blind Spot Mirror',
@@ -933,6 +1279,25 @@ $product_details = [
             'Highway Service Roads',
         ],
 
+        'faqs' => [
+            [
+                'q' => 'What material are your speed breakers made from?',
+                'a' => 'Our speed breakers are manufactured from recycled vulcanised rubber reinforced with steel inserts (in heavy-duty variants), offering high compressive strength and impact resistance under heavy axle loads.',
+            ],
+            [
+                'q' => 'Do rubber speed breakers require road cutting for installation?',
+                'a' => 'No, rubber speed breakers use a modular bolt-down system with anchor bolts fixed into the pavement surface. No road cutting is required, enabling rapid installation with minimal traffic disruption.',
+            ],
+            [
+                'q' => 'Are your speed breakers compliant with IRC specifications?',
+                'a' => 'Our speed breakers are designed in conformance with IRC:99 recommendations for traffic calming devices in terms of height, slope profile, and width, making them suitable for government road projects.',
+            ],
+            [
+                'q' => 'What is the load-bearing capacity of your speed breakers?',
+                'a' => 'Our standard rubber speed breakers withstand axle loads of up to 10 tonnes for light vehicle variants and up to 25 tonnes for heavy-duty models, suitable for truck and bus traffic zones.',
+            ],
+        ],
+
         'seo_title' => 'Rubber Speed Breaker – Road Speed Hump | Prismoline',
         'seo_desc'  => 'Heavy-duty modular rubber speed breakers for traffic calming in school zones, factory gates and parking facilities.',
         'seo_keywords' => 'Speed Breaker, Road Speed Hump, Traffic Calming Speed Bump, Rubber Speed Breaker',
@@ -972,6 +1337,25 @@ $product_details = [
             'Warehouse Loading Bays',
             'Industrial Facilities',
             'Road-Adjacent Infrastructure',
+        ],
+
+        'faqs' => [
+            [
+                'q' => 'What materials are corner guards made from?',
+                'a' => 'Our corner guards are available in high-impact PVC and recycled rubber variants, both offering excellent impact absorption, UV resistance, and high-visibility yellow-black colour coding.',
+            ],
+            [
+                'q' => 'Where are corner guards most commonly installed?',
+                'a' => 'Corner guards are installed on structural columns, wall corners, and edges in parking garages, warehouse loading docks, toll plazas, multi-storey car parks, and road-adjacent building structures.',
+            ],
+            [
+                'q' => 'What height corner guard is recommended for a vehicle impact zone?',
+                'a' => 'For standard passenger vehicle impact zones, 1000–1500mm height is recommended. For heavy vehicle and truck zones, full-height guards from floor to 2000mm provide complete coverage.',
+            ],
+            [
+                'q' => 'Can corner guards be installed without specialist tools?',
+                'a' => 'Yes, corner guards are installed using standard bolts, rawl plugs, or adhesive pads. No specialist tools or trained workers are required for standard installation.',
+            ],
         ],
 
         'seo_title' => 'Corner Guard – Column & Wall Protection | Prismoline',
@@ -1020,6 +1404,25 @@ $product_details = [
             'Foggy / Low-Visibility Corridors',
         ],
 
+        'faqs' => [
+            [
+                'q' => 'How long do solar road studs operate on a single charge?',
+                'a' => 'Solar road studs provide 72–96 hours of LED operation on a full solar charge, ensuring uninterrupted delineation through consecutive cloudy days or monsoon periods.',
+            ],
+            [
+                'q' => 'Are solar road studs suitable for Indian monsoon conditions?',
+                'a' => 'Yes, our solar road studs are IP68 waterproof rated and tested to withstand monsoon rain, road flooding, and high humidity typical of Indian climatic conditions.',
+            ],
+            [
+                'q' => 'What LED colours are available in solar road studs?',
+                'a' => 'Solar road studs are available with white, amber (yellow), red, and green LEDs to meet different road delineation requirements per IRC:35 and MoRTH road stud colour specifications.',
+            ],
+            [
+                'q' => 'Can solar road studs be used under NHAI or smart city tenders?',
+                'a' => 'Yes, solar road studs are frequently specified in NHAI expressway safety projects, smart city mobility infrastructure, and NHIDCL highway improvement tenders across India.',
+            ],
+        ],
+
         'seo_title' => 'Solar Road Stud – LED Active Delineator | Prismoline',
         'seo_desc'  => 'Self-powered LED solar road studs deliver active visibility up to 800 metres for remote roads and accident-prone zones.',
         'seo_keywords' => 'Solar Road Stud, LED Road Delineator, Active Road Stud, Solar Cat Eye',
@@ -1060,6 +1463,29 @@ $product_details = [
             'Lane Channelisation',
             'Road Construction Zones',
             'Temporary Traffic Management',
+        ],
+
+        'faqs' => [
+            [
+                'q' => 'What material are PRISMOLITE delineator posts made from?',
+                'a' => 'PRISMOLITE delineator posts are manufactured from flexible, high-density polyurethane or polypropylene, enabling them to flex under vehicle impact and return to their original upright position without permanent deformation.',
+            ],
+            [
+                'q' => 'Are delineators suitable for permanent or temporary road installations?',
+                'a' => 'Delineators are used in both permanent and temporary configurations. Permanent delineators use ground anchor bolt installation, while temporary delineators use weighted base plates for construction zone and traffic management applications.',
+            ],
+            [
+                'q' => 'What retroreflective sheeting is used on PRISMOLITE delineators?',
+                'a' => 'PRISMOLITE delineators use 3M-compatible or equivalent high-intensity retroreflective sheeting conforming to ASTM D4956 or IRC:35 specifications, ensuring effective night-time visibility.',
+            ],
+            [
+                'q' => 'Do delineators comply with MoRTH or IRC road safety standards?',
+                'a' => 'Yes, PRISMOLITE delineators are designed to conform to IRC:35 and MoRTH specifications for road delineation devices, including dimensions, retroreflectivity, and flexibility requirements.',
+            ],
+            [
+                'q' => 'What is the standard height for road delineator posts?',
+                'a' => 'Standard road delineator posts are 900mm–1200mm in height above ground. Height selection depends on whether the application is for highway edge delineation, intersection channelisation, or construction zone marking.',
+            ],
         ],
 
         'seo_title' => 'Road Delineator Post | Prismolite | Prismoline',
