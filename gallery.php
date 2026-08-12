@@ -79,9 +79,14 @@ if (is_dir($galleryRoot)) {
                     </div>
                 <?php endforeach; ?>
 
-                <?php if (count($group['images']) > 8): ?>
+                <?php if (count($group['images']) > 8):
+                    $moreModalId = 'moreModal_' . md5($group['folder']);
+                ?>
                     <div class="col-md-3 col-sm-6 d-flex align-items-stretch">
-                        <div class="card event-card shadow-sm border-0 rounded-3 overflow-hidden position-relative w-100">
+                        <div class="card event-card shadow-sm border-0 rounded-3 overflow-hidden position-relative w-100"
+                             data-bs-toggle="modal"
+                             data-bs-target="#<?= $moreModalId ?>"
+                             style="cursor: pointer;">
                             <div class="row g-0 w-100 h-100">
                                 <?php foreach (array_slice($group['images'], 0, 4) as $img): ?>
                                     <div class="col-6" style="height: 50%;">
@@ -92,6 +97,29 @@ if (is_dir($galleryRoot)) {
                             <div class="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column align-items-center justify-content-center text-decoration-none" style="background: rgba(0,0,0,0.45);">
                                 <span class="text-white fw-semibold fs-5">+ More Images</span>
                                 <small class="text-light"><?= count($group['images']) - 8 ?> more</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal fade" id="<?= $moreModalId ?>" tabindex="-1" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content border-0 rounded-4 shadow-lg" style="background: rgba(255,255,255,0.95); backdrop-filter: blur(10px);">
+                                <div class="modal-header border-0 pb-0">
+                                    <h3 class="fw-semibold text-main mb-0" style="font-size: var(--h4-size);"><?= htmlspecialchars($title) ?></h3>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row g-3">
+                                        <?php foreach ($group['images'] as $img): ?>
+                                            <div class="col-md-3 col-sm-4 col-6">
+                                                <img src="<?= $base_url ?>assets/images/gallery/<?= htmlspecialchars($group['folder']) ?>/<?= htmlspecialchars($img) ?>"
+                                                    class="w-100 rounded-3"
+                                                    alt="<?= htmlspecialchars($title) ?>"
+                                                    style="aspect-ratio: 4/3; object-fit: cover;">
+                                            </div>
+                                        <?php endforeach; ?>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
