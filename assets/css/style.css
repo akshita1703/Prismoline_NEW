@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 /* Note: Kaushan Script and Urbanist were imported in the old CSS but never
-   actually used anywhere on the site (every heading rendered in Poppins,
-   inherited from body). Removed to cut an unnecessary font request. */
+   actually used anywhere on the site (every heading rendered in the body
+   font). Removed to cut an unnecessary font request. */
 
 
 
@@ -75,7 +75,7 @@ html {
    needs it, not font-size or font-weight.
    ============================================================ */
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     line-height: var(--heading-line-height);
     margin: 0 0 0.6em;
     /* Deliberately no color here — headings should inherit colour from
@@ -124,7 +124,7 @@ h6 { font-size: var(--h6-size); font-weight: var(--h6-weight); }
 
 body {
 
-    font-family: 'Poppins', 'Courier New', Courier, monospace;
+    font-family: 'Montserrat', sans-serif;
 
     background-color: var(--main-bg);
 
@@ -854,7 +854,7 @@ nav .logo {
    look of the PRISMOLINE logo wordmark. Scoped to #carousel so it doesn't
    touch the shared .hero-title used on about.php. */
 #carousel .hero-title {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     letter-spacing: -0.3px;
     line-height: 1.5;
@@ -3505,7 +3505,9 @@ footer {
 
                 li a:hover {
 
-                    color: var(--main-color-hover) !important;
+                    color: #fff !important;
+
+                    text-decoration: underline;
 
                 }
 
@@ -3530,6 +3532,16 @@ footer {
                 font-size: 14px;
 
                 color: var(--light-color);
+
+
+
+                a:hover {
+
+                    color: #fff !important;
+
+                    text-decoration: underline;
+
+                }
 
 
 
