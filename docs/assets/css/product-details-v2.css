@@ -1,0 +1,782 @@
+/* ============================================================
+   PRODUCT DETAILS PAGE ("Product Showcase")
+   Loaded by product-details.php (product-details-v2.php now just
+   redirects here). Same visual system as products-v2.css — CSS
+   variables from style.css only (--main-color, --light-color,
+   --dark-text, Montserrat, --h*-size), nothing new introduced.
+   Class prefix "pdv2-" keeps this scoped away from any other page.
+   ============================================================ */
+
+.pdv2-page {
+    display: flex;
+    flex-direction: column;
+    gap: 44px;
+}
+
+/* ---------- Hero: product visual + product info ---------- */
+
+.pdv2-hero {
+    display: grid;
+    grid-template-columns: minmax(260px, 380px) 1fr;
+    gap: 44px;
+    align-items: start;
+}
+
+@media (max-width: 900px) {
+    .pdv2-hero {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+}
+
+/* Grid items default to min-width:auto, which stops long text from
+   wrapping and causes horizontal overflow. */
+.pdv2-hero>* {
+    min-width: 0;
+}
+
+.pdv2-hero-visual {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    border-radius: 24px;
+    background: linear-gradient(180deg, #fff 0%, var(--light-color) 100%);
+    border: 1px solid #eef1f5;
+    padding: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+@media (max-width: 900px) {
+    .pdv2-hero-visual {
+        max-width: 380px;
+        margin: 0 auto;
+    }
+}
+
+.pdv2-hero-visual:hover {
+    border-color: rgba(51, 104, 184, 0.25);
+    box-shadow: 0 20px 40px rgba(51, 104, 184, 0.14);
+}
+
+.pdv2-hero-visual-bg {
+    position: absolute;
+    inset: -20%;
+    background:
+        radial-gradient(circle at 25% 20%, rgba(51, 104, 184, 0.12), transparent 60%),
+        radial-gradient(circle at 85% 85%, rgba(51, 104, 184, 0.08), transparent 55%);
+    pointer-events: none;
+}
+
+.pdv2-hero-image {
+    position: relative;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 20px 30px rgba(20, 40, 80, 0.16));
+    transition: transform 0.4s ease;
+}
+
+.pdv2-hero-visual:hover .pdv2-hero-image {
+    transform: scale(1.05);
+}
+
+.pdv2-badge {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--main-color);
+    background: var(--light-color);
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 14px;
+}
+
+.pdv2-title {
+    font-size: var(--h1-size);
+    font-weight: var(--h1-weight);
+    color: var(--main-color);
+    margin-bottom: 8px;
+}
+
+.pdv2-tagline {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--main-color);
+    margin-bottom: 14px;
+}
+
+.pdv2-hero-desc {
+    color: var(--dark-text-hover);
+    line-height: 1.75;
+    margin-bottom: 20px;
+}
+
+.pdv2-chip-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 10px;
+    margin-bottom: 24px;
+}
+
+.pdv2-chip-card {
+    background: #fff;
+    border: 1px solid #eef1f5;
+    border-radius: 12px;
+    padding: 12px 16px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.pdv2-chip-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(51, 104, 184, 0.25);
+    box-shadow: 0 10px 22px rgba(51, 104, 184, 0.12);
+}
+
+.pdv2-chip-label {
+    display: block;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--main2-color);
+    margin-bottom: 3px;
+}
+
+.pdv2-chip-value {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--dark-text);
+}
+
+.pdv2-hero-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.pdv2-btn-primary,
+.pdv2-btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 28px;
+    border-radius: 40px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.pdv2-btn-primary {
+    background: var(--main-color);
+    color: #fff;
+}
+
+.pdv2-btn-primary:hover {
+    background: var(--main-color-hover);
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px rgba(51, 104, 184, 0.32);
+}
+
+.pdv2-btn-outline {
+    background: #fff;
+    color: var(--main-color);
+    border: 1.5px solid var(--main-color);
+}
+
+.pdv2-btn-outline:hover {
+    background: var(--main-color);
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px rgba(51, 104, 184, 0.2);
+}
+
+/* ---------- Dark hero variant — only the hero gets this premium, moody
+   treatment; every section below stays on the lighter alternating bands,
+   so the page isn't dark throughout. ---------- */
+
+.pdv2-hero-dark {
+    background: linear-gradient(115deg, #0c1625 0%, #16233c 55%, var(--main-color-hover) 100%);
+    border-radius: 28px;
+    padding: 40px;
+}
+
+@media (max-width: 576px) {
+    .pdv2-hero-dark {
+        padding: 28px 20px;
+    }
+}
+
+.pdv2-hero-dark .pdv2-hero-visual {
+    background: linear-gradient(160deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.04));
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.pdv2-hero-dark .pdv2-hero-visual:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.pdv2-hero-dark .pdv2-badge {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.pdv2-hero-dark .pdv2-title {
+    color: #fff;
+}
+
+.pdv2-hero-dark .pdv2-tagline {
+    color: #9ec2f2;
+}
+
+.pdv2-hero-dark .pdv2-hero-desc {
+    color: rgba(255, 255, 255, 0.78);
+}
+
+.pdv2-hero-dark .pdv2-chip-card {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.pdv2-hero-dark .pdv2-chip-card:hover {
+    border-color: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
+}
+
+.pdv2-hero-dark .pdv2-chip-label {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.pdv2-hero-dark .pdv2-chip-value {
+    color: #fff;
+}
+
+.pdv2-hero-dark .pdv2-btn-outline {
+    background: transparent;
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.pdv2-hero-dark .pdv2-btn-outline:hover {
+    background: #fff;
+    color: var(--main-color-hover);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* ---------- Alternating bands (mirrors the homepage's bg-light rhythm,
+   same pattern as products-v2.php) ---------- */
+
+.pdv2-band {
+    border-radius: 32px;
+    padding: 8px 4px;
+}
+
+.pdv2-band-light {
+    background: #f5f9fd;
+    padding: 48px 40px;
+    box-shadow: 0 4px 20px rgba(20, 40, 80, 0.04);
+}
+
+@media (max-width: 576px) {
+    .pdv2-band-light {
+        padding: 36px 22px;
+    }
+}
+
+.pdv2-band-light .pdv2-pill:not(:hover) {
+    background: #fff;
+}
+
+.pdv2-section-eyebrow {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--main-color);
+    margin-bottom: 8px;
+}
+
+.pdv2-section-title {
+    font-size: var(--h3-size);
+    font-weight: var(--h3-weight);
+    color: var(--main-color);
+    margin-bottom: 20px;
+}
+
+.pdv2-section-title-light {
+    color: #fff;
+}
+
+.pdv2-overview-card {
+    background: #fff;
+    border: 1px solid #eef1f5;
+    border-left: 3px solid var(--main-color);
+    border-radius: 4px 16px 16px 4px;
+    padding: 20px 24px;
+    transition: box-shadow 0.25s ease, border-left-width 0.25s ease;
+}
+
+.pdv2-overview-card:hover {
+    border-left-width: 5px;
+    box-shadow: 0 10px 26px rgba(51, 104, 184, 0.1);
+}
+
+.pdv2-overview-card p {
+    color: var(--dark-text-hover);
+    line-height: 1.75;
+    margin: 0;
+}
+
+.pdv2-spec-rows {
+    background: #fff;
+    border: 1px solid #eef1f5;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.pdv2-spec-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 14px 20px;
+    font-size: 0.88rem;
+    border-bottom: 1px solid #eef1f5;
+    transition: background 0.2s ease;
+}
+
+.pdv2-spec-row:last-child {
+    border-bottom: none;
+}
+
+.pdv2-spec-row:hover {
+    background: var(--light-color);
+}
+
+.pdv2-spec-row span:first-child {
+    color: var(--dark-text);
+    font-weight: 600;
+}
+
+.pdv2-spec-row span:last-child {
+    color: var(--dark-text-hover);
+    text-align: right;
+}
+
+.pdv2-chip-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.pdv2-pill {
+    background: var(--light-color);
+    color: var(--dark-text);
+    font-weight: 600;
+    font-size: 0.82rem;
+    padding: 9px 18px;
+    border-radius: 30px;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.pdv2-pill:hover {
+    background: var(--main-color);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.pdv2-standards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+}
+
+.pdv2-standards-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: #fff;
+    border: 1px solid #eef1f5;
+    border-radius: 16px;
+    padding: 18px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.pdv2-standards-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(51, 104, 184, 0.25);
+    box-shadow: 0 12px 26px rgba(51, 104, 184, 0.12);
+}
+
+/* Filled, high-contrast icon (matches the original products.php trust
+   strip) rather than the subtler light-tint style used elsewhere. */
+.pdv2-standards-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: var(--main-color);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.pdv2-standards-card:hover .pdv2-standards-icon {
+    background: var(--main-color-hover);
+    transform: scale(1.08);
+}
+
+.pdv2-standards-card span {
+    font-weight: 700;
+    font-size: 0.88rem;
+    color: var(--dark-text);
+    line-height: 1.4;
+}
+
+.pdv2-benefits-panel {
+    background: linear-gradient(135deg, var(--main-color), var(--main-color-hover));
+    border-radius: 32px;
+    padding: 48px 40px;
+}
+
+@media (max-width: 576px) {
+    .pdv2-benefits-panel {
+        padding: 36px 22px;
+    }
+}
+
+.pdv2-benefit-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+@media (max-width: 900px) {
+    .pdv2-benefit-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 560px) {
+    .pdv2-benefit-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.pdv2-benefit-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    background: transparent;
+    padding: 4px 8px;
+    transition: transform 0.25s ease;
+}
+
+.pdv2-benefit-card:hover {
+    transform: translateY(-4px);
+}
+
+.pdv2-benefit-icon {
+    flex-shrink: 0;
+    color: #fff;
+    font-size: 2rem;
+    line-height: 1;
+    margin-bottom: 14px;
+    transition: transform 0.3s ease;
+}
+
+.pdv2-benefit-card:hover .pdv2-benefit-icon {
+    transform: scale(1.12) rotate(-4deg);
+}
+
+.pdv2-benefit-card h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 0;
+}
+
+.pdv2-benefit-rule {
+    display: block;
+    width: 30px;
+    height: 2px;
+    background: repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.7) 0 6px, transparent 6px 10px);
+    margin: 10px 0 12px;
+}
+
+.pdv2-benefit-card p {
+    font-size: 0.88rem;
+    color: rgba(255, 255, 255, 0.78);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.pdv2-cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 18px;
+}
+
+.pdv2-cert-card {
+    background: #fff;
+    border: 1px solid #eef1f5;
+    border-radius: 16px;
+    padding: 22px;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.pdv2-cert-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(51, 104, 184, 0.25);
+    box-shadow: 0 16px 32px rgba(51, 104, 184, 0.14);
+}
+
+.pdv2-cert-card-image {
+    width: 65%;
+    max-width: 160px;
+    aspect-ratio: 1241 / 1754;
+    background: var(--light-color);
+    border-radius: 10px;
+    padding: 8px;
+    margin: 0 auto 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.pdv2-cert-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(20, 40, 80, 0.12);
+    transition: transform 0.3s ease;
+}
+
+.pdv2-cert-card:hover .pdv2-cert-card-image img {
+    transform: scale(1.05);
+}
+
+.pdv2-cert-card h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--dark-text);
+    margin-bottom: 4px;
+}
+
+.pdv2-cert-card p {
+    font-size: 0.8rem;
+    color: var(--dark-text-hover);
+    margin: 0;
+}
+
+.pdv2-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 18px;
+}
+
+.pdv2-info-card {
+    background: #fff;
+    border: 1px solid #eef1f5;
+    border-radius: 16px;
+    padding: 22px;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.pdv2-info-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(51, 104, 184, 0.25);
+    box-shadow: 0 16px 32px rgba(51, 104, 184, 0.14);
+}
+
+.pdv2-info-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: var(--light-color);
+    color: var(--main-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.05rem;
+    margin: 0 auto 12px;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.pdv2-info-card:hover .pdv2-info-icon {
+    background: var(--main-color);
+    color: #fff;
+    transform: scale(1.1) rotate(-6deg);
+}
+
+.pdv2-info-card strong {
+    display: block;
+    font-size: 0.95rem;
+    color: var(--dark-text);
+    margin-bottom: 2px;
+}
+
+.pdv2-info-card span {
+    font-size: 0.8rem;
+    color: var(--dark-text-hover);
+}
+
+.pdv2-faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.pdv2-faq-item {
+    border: 1px solid #eef1f5;
+    border-radius: 14px;
+    overflow: hidden;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pdv2-faq-item:hover {
+    border-color: rgba(51, 104, 184, 0.25);
+    box-shadow: 0 8px 20px rgba(51, 104, 184, 0.08);
+}
+
+.pdv2-faq-question {
+    width: 100%;
+    text-align: left;
+    background: #fff;
+    border: none;
+    padding: 18px 22px;
+    font-weight: 600;
+    color: var(--dark-text);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.pdv2-faq-icon {
+    transition: transform 0.3s ease;
+    color: var(--main-color);
+    flex-shrink: 0;
+    margin-left: 12px;
+}
+
+.pdv2-faq-question[aria-expanded="true"] .pdv2-faq-icon {
+    transform: rotate(45deg);
+}
+
+.pdv2-faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.35s ease;
+    padding: 0 22px;
+    color: var(--dark-text-hover);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    background: #fbfcfe;
+}
+
+.pdv2-faq-answer.open {
+    max-height: 300px;
+    padding: 0 22px 18px;
+}
+
+/* ---------- Closing CTA ---------- */
+
+.pdv2-cta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background: var(--light-color);
+    border-radius: 24px;
+    padding: 32px 36px;
+    transition: box-shadow 0.3s ease;
+}
+
+.pdv2-cta:hover {
+    box-shadow: 0 16px 34px rgba(51, 104, 184, 0.1);
+}
+
+.pdv2-cta h3 {
+    font-size: var(--h4-size);
+    font-weight: var(--h4-weight);
+    color: var(--main-color);
+    margin: 0 0 4px;
+}
+
+.pdv2-cta p {
+    font-size: 0.9rem;
+    color: var(--dark-text-hover);
+    margin: 0;
+}
+
+.pdv2-cta a {
+    flex-shrink: 0;
+    background: var(--main-color);
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 14px 30px;
+    border-radius: 40px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pdv2-cta a:hover {
+    background: var(--main-color-hover);
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px rgba(51, 104, 184, 0.35);
+}
+
+/* ---------- Subtle entrance animation ---------- */
+
+@keyframes pdv2FadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.pdv2-hero,
+.pdv2-band,
+.pdv2-benefits-panel,
+.pdv2-cta {
+    animation: pdv2FadeUp 0.5s ease both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}

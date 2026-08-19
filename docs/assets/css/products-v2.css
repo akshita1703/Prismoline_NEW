@@ -1,0 +1,876 @@
+/* ============================================================
+   PRODUCTS PAGE ("Product Showcase" layout)
+   Loaded by products.php (products-v2.php now just redirects here).
+   Every colour/font comes from the same CSS variables already
+   defined in style.css (--main-color, --light-color, --dark-text,
+   Montserrat, the --h*-size scale) — nothing new is introduced,
+   this file only changes arrangement, spacing, and card shapes.
+   ============================================================ */
+
+.pv2-page {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+/* ---------- Hero: product visual + product info ---------- */
+
+.pv2-hero {
+    display: grid;
+    grid-template-columns: minmax(260px, 420px) 1fr;
+    gap: 48px;
+    align-items: start;
+}
+
+/* Grid items default to min-width:auto, which stops long text from
+   wrapping and causes horizontal overflow. */
+.pv2-hero>* {
+    min-width: 0;
+}
+
+@media (max-width: 900px) {
+    .pv2-hero {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+}
+
+.pv2-hero-visual {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    border-radius: 28px;
+    background: linear-gradient(180deg, #fff 0%, var(--light-color) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+
+.pv2-hero-visual:hover {
+    box-shadow: 0 20px 40px rgba(51, 104, 184, 0.12);
+}
+
+.pv2-hero-visual:hover .pv2-hero-image {
+    transform: scale(1.03);
+}
+
+@media (max-width: 900px) {
+    .pv2-hero-visual {
+        max-width: 420px;
+        margin: 0 auto;
+    }
+}
+
+.pv2-hero-visual-bg {
+    position: absolute;
+    inset: -20%;
+    background:
+        radial-gradient(circle at 28% 22%, rgba(51, 104, 184, 0.12), transparent 60%),
+        radial-gradient(circle at 82% 80%, rgba(51, 104, 184, 0.08), transparent 55%);
+    pointer-events: none;
+}
+
+.pv2-hero-count-badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--main-color);
+    font-weight: 700;
+    font-size: 0.72rem;
+    padding: 7px 14px;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(20, 40, 80, 0.12);
+}
+
+.pv2-hero-image {
+    position: relative;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 22px 30px rgba(20, 40, 80, 0.18));
+    transition: transform 0.35s ease;
+}
+
+.pv2-eyebrow {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--main-color);
+    margin-bottom: 10px;
+}
+
+.pv2-title {
+    font-size: var(--h1-size);
+    font-weight: var(--h1-weight);
+    color: var(--main-color);
+    margin-bottom: 14px;
+}
+
+.pv2-tagline-pill {
+    display: inline-block;
+    background: var(--light-color);
+    color: var(--main-color);
+    font-weight: 700;
+    font-size: 0.78rem;
+    letter-spacing: 0.03em;
+    padding: 6px 14px;
+    border-radius: 30px;
+    margin-bottom: 16px;
+}
+
+.pv2-content-label {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--main2-color);
+    margin: 18px 0 8px;
+}
+
+.pv2-overview-card {
+    position: relative;
+    background: linear-gradient(180deg, #fff 0%, var(--light-color) 130%);
+    border: 1px solid #eef1f5;
+    border-radius: 20px;
+    padding: 28px 28px 26px 76px;
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.pv2-overview-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 30px rgba(51, 104, 184, 0.1);
+}
+
+.pv2-overview-icon {
+    position: absolute;
+    top: 26px;
+    left: 24px;
+    width: 36px;
+    height: 36px;
+    border-radius: 12px;
+    background: var(--main-color);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    box-shadow: 0 8px 18px rgba(51, 104, 184, 0.3);
+}
+
+@media (max-width: 480px) {
+    .pv2-overview-card {
+        padding: 64px 20px 22px;
+    }
+
+    .pv2-overview-icon {
+        top: 20px;
+        left: 20px;
+    }
+}
+
+.pv2-content p {
+    color: var(--dark-text-hover);
+    line-height: 1.75;
+    margin-bottom: 12px;
+}
+
+.pv2-content p:last-child {
+    margin-bottom: 0;
+}
+
+.pv2-content strong {
+    color: var(--dark-text);
+    font-weight: inherit;
+    font-style: italic;
+}
+
+.pv2-hero-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.pv2-btn-primary,
+.pv2-btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 28px;
+    border-radius: 40px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.pv2-btn-primary {
+    background: var(--main-color);
+    color: #fff;
+}
+
+.pv2-btn-primary:hover {
+    background: var(--main-color-hover);
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px rgba(51, 104, 184, 0.32);
+}
+
+.pv2-btn-outline {
+    background: #fff;
+    color: var(--main-color);
+    border: 1.5px solid var(--main-color);
+}
+
+.pv2-btn-outline:hover {
+    background: var(--main-color);
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px rgba(51, 104, 184, 0.2);
+}
+
+/* ---------- Alternating bands (mirrors the homepage's bg-light rhythm) ---------- */
+
+.pv2-band {
+    border-radius: 32px;
+    padding: 8px 4px;
+}
+
+.pv2-band-light {
+    background: #f5f9fd;
+    padding: 48px 40px;
+    box-shadow: 0 4px 20px rgba(20, 40, 80, 0.04);
+}
+
+@media (max-width: 576px) {
+    .pv2-band-light {
+        padding: 36px 22px;
+    }
+}
+
+/* Chips default to var(--light-color) as their own background, so they need
+   to switch to white inside a light band or they'd blend into it. */
+.pv2-band-light .pv2-chip:not(.pv2-chip-accent) {
+    background: #fff;
+}
+
+.pv2-section-title {
+    font-size: var(--h3-size);
+    font-weight: var(--h3-weight);
+    color: var(--main-color);
+    margin-bottom: 20px;
+}
+
+.pv2-benefits-panel {
+    background: linear-gradient(135deg, var(--main-color), var(--main-color-hover));
+    border-radius: 32px;
+    padding: 48px 40px;
+}
+
+@media (max-width: 576px) {
+    .pv2-benefits-panel {
+        padding: 36px 22px;
+    }
+}
+
+.pv2-section-title-light {
+    color: #fff;
+}
+
+.pv2-benefit-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+@media (max-width: 900px) {
+    .pv2-benefit-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 560px) {
+    .pv2-benefit-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.pv2-benefit-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    background: transparent;
+    padding: 4px 8px;
+    transition: transform 0.25s ease;
+}
+
+.pv2-benefit-card:hover {
+    transform: translateY(-4px);
+}
+
+.pv2-benefit-icon {
+    flex-shrink: 0;
+    color: #fff;
+    font-size: 2rem;
+    line-height: 1;
+    margin-bottom: 14px;
+    transition: transform 0.3s ease;
+}
+
+.pv2-benefit-card:hover .pv2-benefit-icon {
+    transform: scale(1.12) rotate(-4deg);
+}
+
+.pv2-benefit-card h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 0;
+}
+
+.pv2-benefit-rule {
+    display: block;
+    width: 30px;
+    height: 2px;
+    background: repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.7) 0 6px, transparent 6px 10px);
+    margin: 10px 0 12px;
+}
+
+.pv2-benefit-card p {
+    font-size: 0.88rem;
+    color: rgba(255, 255, 255, 0.78);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.pv2-chip-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.pv2-chip {
+    background: var(--light-color);
+    color: var(--dark-text);
+    font-weight: 600;
+    font-size: 0.82rem;
+    padding: 9px 18px;
+    border-radius: 30px;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.pv2-chip:not(.pv2-chip-accent):hover {
+    background: var(--main-color);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.pv2-chip-accent {
+    background: var(--main-color);
+    color: #fff;
+}
+
+.pv2-standards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+}
+
+.pv2-standards-card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: #fff;
+    border: 1px solid #eef1f5;
+    border-left: 4px solid var(--main-color);
+    border-radius: 6px 18px 18px 6px;
+    padding: 22px 24px;
+    box-shadow: 0 3px 14px rgba(20, 40, 80, 0.05);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-left-color 0.25s ease;
+}
+
+.pv2-standards-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 30px rgba(51, 104, 184, 0.14);
+}
+
+.pv2-standards-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: var(--light-color);
+    color: var(--main-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.05rem;
+    flex-shrink: 0;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.pv2-standards-card:hover .pv2-standards-icon {
+    background: var(--main-color);
+    color: #fff;
+    transform: scale(1.08);
+}
+
+.pv2-standards-card span {
+    font-weight: 700;
+    font-size: 0.88rem;
+    color: var(--dark-text);
+    line-height: 1.4;
+}
+
+/* ---------- Fallback content for categories without per-SKU products ---------- */
+
+.pv2-subpoints {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+}
+
+.pv2-subpoint {
+    background: #fff;
+    border: 1px solid #eef1f5;
+    border-radius: 16px;
+    padding: 20px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.pv2-subpoint:hover {
+    transform: translateY(-4px);
+    border-color: rgba(51, 104, 184, 0.25);
+    box-shadow: 0 12px 26px rgba(51, 104, 184, 0.12);
+}
+
+.pv2-subpoint strong {
+    display: block;
+    color: var(--main-color);
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+}
+
+.pv2-subpoint span {
+    color: var(--dark-text-hover);
+    font-size: 0.86rem;
+    line-height: 1.6;
+}
+
+.pv2-spec-rows {
+    background: #fff;
+    border: 1px solid #eef1f5;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.pv2-spec-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 14px 20px;
+    font-size: 0.88rem;
+    border-bottom: 1px solid #eef1f5;
+    transition: background 0.2s ease;
+}
+
+.pv2-spec-row:last-child {
+    border-bottom: none;
+}
+
+.pv2-spec-row:hover {
+    background: var(--light-color);
+}
+
+.pv2-spec-row span:first-child {
+    color: var(--dark-text-hover);
+    font-weight: 600;
+}
+
+.pv2-spec-row span:last-child {
+    color: var(--dark-text);
+    font-weight: 700;
+    text-align: right;
+}
+
+.pv2-info-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+}
+
+.pv2-info-card {
+    background: #fff;
+    border: 1px solid #eef1f5;
+    border-radius: 16px;
+    padding: 20px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.pv2-info-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(51, 104, 184, 0.25);
+    box-shadow: 0 12px 26px rgba(51, 104, 184, 0.12);
+}
+
+.pv2-info-card h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--main-color);
+    margin-bottom: 10px;
+}
+
+.pv2-info-card ul {
+    margin: 0;
+    padding-left: 18px;
+    font-size: 0.85rem;
+    color: var(--dark-text-hover);
+    line-height: 1.6;
+}
+
+/* ---------- Available Products (card grid) ---------- */
+
+.pv2-products-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.pv2-products-heading .pv2-section-title {
+    margin-bottom: 0;
+}
+
+.pv2-product-count {
+    background: var(--light-color);
+    color: var(--main-color);
+    font-weight: 700;
+    font-size: 0.8rem;
+    padding: 8px 16px;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+
+.pv2-product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 22px;
+}
+
+.pv2-product-card {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border: 1px solid #eef1f5;
+    border-radius: 22px;
+    overflow: hidden;
+    text-decoration: none;
+    box-shadow: 0 4px 18px rgba(20, 40, 80, 0.06);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.pv2-product-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(51, 104, 184, 0.25);
+    box-shadow: 0 18px 36px rgba(51, 104, 184, 0.16);
+}
+
+.pv2-product-card-image {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background: var(--light-color);
+}
+
+.pv2-product-card-image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(20, 40, 80, 0) 60%, rgba(20, 40, 80, 0.14) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.pv2-product-card:hover .pv2-product-card-image::after {
+    opacity: 1;
+}
+
+.pv2-product-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.35s ease;
+}
+
+.pv2-product-card:hover .pv2-product-card-image img {
+    transform: scale(1.06);
+}
+
+.pv2-product-card-body {
+    padding: 20px 20px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+}
+
+.pv2-product-card-body h3 {
+    font-size: 0.98rem;
+    font-weight: 700;
+    color: var(--dark-text);
+    line-height: 1.35;
+    margin: 0;
+}
+
+.pv2-product-card-body p {
+    font-size: 0.82rem;
+    color: var(--dark-text-hover);
+    line-height: 1.5;
+    margin: 0;
+    flex: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.pv2-product-card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    align-self: flex-start;
+    background: var(--light-color);
+    color: var(--main-color);
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 10px 18px;
+    border-radius: 30px;
+    margin-top: 10px;
+    transition: background 0.25s ease, color 0.25s ease, gap 0.25s ease, box-shadow 0.25s ease;
+}
+
+.pv2-product-card:hover .pv2-product-card-link {
+    background: var(--main-color);
+    color: #fff;
+    gap: 12px;
+    box-shadow: 0 8px 18px rgba(51, 104, 184, 0.3);
+}
+
+.pv2-product-card-link i {
+    font-size: 0.7rem;
+    transition: transform 0.2s ease;
+}
+
+.pv2-product-card:hover .pv2-product-card-link i {
+    transform: translateX(2px);
+}
+
+.pv2-also-available {
+    margin-top: 36px;
+    text-align: center;
+    padding: 32px;
+    background: var(--light-color);
+    border-radius: 20px;
+}
+
+.pv2-also-available-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-top: 18px;
+}
+
+.pv2-also-available-logos img {
+    max-height: 60px;
+}
+
+.pv2-also-available-logo-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 14px 18px;
+    box-shadow: 0 6px 18px rgba(20, 40, 80, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pv2-also-available-logo-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 28px rgba(20, 40, 80, 0.14);
+}
+
+/* ---------- Client reviews (placeholder content) ---------- */
+
+.pv2-testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.pv2-testimonial-card {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border: 1px solid #eef1f5;
+    border-radius: 20px;
+    padding: 26px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.pv2-testimonial-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(51, 104, 184, 0.25);
+    box-shadow: 0 16px 32px rgba(51, 104, 184, 0.12);
+}
+
+.pv2-testimonial-stars {
+    color: #f5a623;
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    margin-bottom: 14px;
+}
+
+.pv2-testimonial-quote {
+    font-size: 0.92rem;
+    color: var(--dark-text);
+    line-height: 1.7;
+    flex: 1;
+    margin-bottom: 20px;
+}
+
+.pv2-testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-top: 16px;
+    border-top: 1px solid #eef1f5;
+}
+
+.pv2-testimonial-avatar {
+    flex-shrink: 0;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: var(--light-color);
+    color: var(--main-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+}
+
+.pv2-testimonial-author div {
+    display: flex;
+    flex-direction: column;
+}
+
+.pv2-testimonial-author strong {
+    font-size: 0.88rem;
+    color: var(--dark-text);
+}
+
+.pv2-testimonial-author span {
+    font-size: 0.78rem;
+    color: var(--dark-text-hover);
+}
+
+.pv2-testimonial-disclaimer {
+    margin: 18px 0 0;
+    font-size: 0.72rem;
+    color: var(--main2-color);
+    font-style: italic;
+}
+
+/* ---------- Closing CTA (light, per design brief) ---------- */
+
+.pv2-cta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background: var(--light-color);
+    border-radius: 24px;
+    padding: 32px 36px;
+    transition: box-shadow 0.3s ease;
+}
+
+.pv2-cta:hover {
+    box-shadow: 0 16px 34px rgba(51, 104, 184, 0.1);
+}
+
+.pv2-cta h3 {
+    font-size: var(--h4-size);
+    font-weight: var(--h4-weight);
+    color: var(--main-color);
+    margin: 0 0 4px;
+}
+
+.pv2-cta p {
+    font-size: 0.9rem;
+    color: var(--dark-text-hover);
+    margin: 0;
+}
+
+.pv2-cta a {
+    flex-shrink: 0;
+    background: var(--main-color);
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 14px 30px;
+    border-radius: 40px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pv2-cta a:hover {
+    background: var(--main-color-hover);
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px rgba(51, 104, 184, 0.35);
+}
+
+/* ---------- Subtle entrance animation ---------- */
+
+@keyframes pv2FadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.pv2-hero,
+.pv2-band,
+.pv2-benefits-panel,
+.pv2-cta {
+    animation: pv2FadeUp 0.5s ease both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
