@@ -199,6 +199,18 @@
     margin-top: 20px;
 }
 
+@media (max-width: 480px) {
+    .pv2-hero-actions {
+        flex-direction: column;
+    }
+
+    .pv2-btn-primary,
+    .pv2-btn-outline {
+        justify-content: center;
+        width: 100%;
+    }
+}
+
 .pv2-btn-primary,
 .pv2-btn-outline {
     display: inline-flex;

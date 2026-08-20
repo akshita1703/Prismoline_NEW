@@ -161,6 +161,18 @@
     flex-wrap: wrap;
 }
 
+@media (max-width: 480px) {
+    .pdv2-hero-actions {
+        flex-direction: column;
+    }
+
+    .pdv2-btn-primary,
+    .pdv2-btn-outline {
+        justify-content: center;
+        width: 100%;
+    }
+}
+
 .pdv2-btn-primary,
 .pdv2-btn-outline {
     display: inline-flex;
